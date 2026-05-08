@@ -70,7 +70,7 @@ function Index() {
       <WhatsAppBubble />
 
       {/* HERO */}
-      <section id="home" className="relative isolate overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32">
+      <section id="home" className="relative isolate overflow-hidden pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20">
         {/* Carousel background */}
         <div className="absolute inset-0 -z-20">
           <AICarousel asBackground onSlideChange={setActiveSlide} onApi={setCarouselApi} />
