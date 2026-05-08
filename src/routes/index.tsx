@@ -112,6 +112,8 @@ function Index() {
             </a>
           </div>
 
+          <AICarousel />
+
           {/* floating icons */}
           <div className="pointer-events-none absolute left-[8%] top-[40%] hidden md:block">
             <div className="animate-float glass rounded-2xl p-3 shadow-[var(--shadow-glow)]"><Bot className="h-6 w-6 text-[var(--neon-blue)]" /></div>
