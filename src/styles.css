@@ -79,8 +79,8 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     background-image:
-      radial-gradient(ellipse 80% 60% at 50% -10%, oklch(0.3 0.15 260 / 0.35), transparent),
-      radial-gradient(ellipse 60% 50% at 90% 30%, oklch(0.3 0.15 295 / 0.25), transparent);
+      radial-gradient(ellipse 80% 60% at 50% -10%, oklch(0.45 0.2 55 / 0.35), transparent),
+      radial-gradient(ellipse 60% 50% at 90% 30%, oklch(0.45 0.22 30 / 0.25), transparent);
     background-attachment: fixed;
   }
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
@@ -95,8 +95,8 @@
   }
   .bg-grid {
     background-image:
-      linear-gradient(oklch(0.7 0.2 245 / 0.07) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(0.7 0.2 245 / 0.07) 1px, transparent 1px);
+      linear-gradient(oklch(0.78 0.18 65 / 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.78 0.18 65 / 0.08) 1px, transparent 1px);
     background-size: 48px 48px;
     mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 40%, transparent 80%);
   }
