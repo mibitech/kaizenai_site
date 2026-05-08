@@ -70,11 +70,18 @@ function Index() {
 
       {/* HERO */}
       <section id="home" className="relative isolate overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32">
-        <div className="absolute inset-0 bg-grid" aria-hidden />
-        <div className="absolute inset-0 -z-10">
+        {/* Carousel background */}
+        <div className="absolute inset-0 -z-20">
+          <AICarousel asBackground />
+        </div>
+        {/* Dark overlay for legibility */}
+        <div className="absolute inset-0 -z-10 bg-background/75 backdrop-blur-[2px]" aria-hidden />
+        {/* Neural network kept on top of the carousel */}
+        <div className="absolute inset-0 -z-10 opacity-60">
           <NeuralNetwork />
         </div>
         <div className="absolute inset-x-0 top-0 -z-10 h-[600px]" style={{ background: "var(--gradient-glow)" }} aria-hidden />
+
 
         <div className="mx-auto max-w-6xl px-6 text-center">
           <div className="animate-fade-in mx-auto mb-6 inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs">
@@ -112,7 +119,6 @@ function Index() {
             </a>
           </div>
 
-          <AICarousel />
 
           {/* floating icons */}
           <div className="pointer-events-none absolute left-[8%] top-[40%] hidden md:block">
