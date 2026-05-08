@@ -1,24 +1,18 @@
-# Dockerfile para aplicação React (Vite)
 FROM node:20-alpine AS build
 WORKDIR /app
-
-# Instalar pnpm globalmente
 RUN npm install -g pnpm
-
-# Copiar arquivos de dependências
 COPY package.json pnpm-lock.yaml ./
-
-# Instalar dependências com pnpm (frozen-lockfile garante versões exatas)
 RUN pnpm install --frozen-lockfile --shamefully-hoist
-
-# Copiar código fonte
 COPY . .
-
-# Build da aplicação
 RUN pnpm build
 
-FROM nginx:alpine
-COPY --from=build /app/dist /usr/share/nginx/html
-COPY ./nginx.conf /etc/nginx/conf.d/default.conf
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
+FROM node:20-alpine
+WORKDIR /app
+RUN npm install -g pnpm
+COPY --from=build /app/package.json ./
+COPY --from=build /app/pnpm-lock.yaml ./
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/wrangler.jsonc ./
+EXPOSE 3000
+CMD ["pnpm", "preview"]
