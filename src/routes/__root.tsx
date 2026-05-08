@@ -76,6 +76,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Agentes de IA, SaaS sob demanda e Engenharia de Dados. Você tem a ideia. Nós entregamos o produto." },
       { name: "author", content: "Kaizenai" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Kaizenai — Inteligência que transforma" },
+      { name: "twitter:title", content: "Kaizenai — Inteligência que transforma" },
+      { property: "og:description", content: "Agentes de IA, SaaS sob demanda e Engenharia de Dados. Você tem a ideia. Nós entregamos o produto." },
+      { name: "twitter:description", content: "Agentes de IA, SaaS sob demanda e Engenharia de Dados. Você tem a ideia. Nós entregamos o produto." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/339e9e54-6351-44bc-8f10-3bdae77ffd5c/id-preview-722fd8a2--baa05445-91ff-4348-bfb1-bd6d45911ac8.lovable.app-1778245948388.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/339e9e54-6351-44bc-8f10-3bdae77ffd5c/id-preview-722fd8a2--baa05445-91ff-4348-bfb1-bd6d45911ac8.lovable.app-1778245948388.png" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
