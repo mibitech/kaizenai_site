@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight, Bot, Database, BrainCircuit, Workflow, Plug,
-  Lightbulb, Cog, Rocket, Sparkles, ChevronRight, Linkedin, Github, Instagram,
+  Lightbulb, Cog, Rocket, Sparkles, ChevronRight, ChevronLeft, Linkedin, Github, Instagram,
   LineChart, Layers, ShieldCheck,
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
