@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  ArrowRight, Bot, Database, BrainCircuit, Workflow, Plug, Cloud,
+  ArrowRight, Bot, Database, BrainCircuit, Workflow, Plug,
   Lightbulb, Cog, Rocket, Sparkles, ChevronRight, Linkedin, Github, Instagram,
   LineChart, Layers, ShieldCheck,
 } from "lucide-react";
@@ -8,6 +8,8 @@ import { Navbar } from "@/components/Navbar";
 import { NeuralNetwork } from "@/components/NeuralNetwork";
 import { Typewriter } from "@/components/Typewriter";
 import { WhatsAppBubble, WHATSAPP } from "@/components/WhatsAppBubble";
+import { Clients } from "@/components/Clients";
+import { Logo } from "@/components/Logo";
 import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
@@ -214,6 +216,9 @@ function Index() {
         </div>
       </section>
 
+      {/* CLIENTS */}
+      <Clients />
+
       {/* TECH */}
       <section id="tecnologias" className="relative py-24">
         <div className="mx-auto max-w-6xl px-6">
@@ -276,10 +281,8 @@ function Index() {
       <footer className="border-t border-border/50 py-12">
         <div className="mx-auto grid max-w-6xl gap-8 px-6 md:grid-cols-3 md:items-start">
           <div>
-            <div className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[var(--neon-blue)] to-[var(--neon-violet)]">
-                <Cloud className="h-5 w-5 text-background" />
-              </span>
+            <div className="flex items-center gap-2.5">
+              <Logo className="h-9 w-9" />
               <span className="font-display text-xl font-bold">Kaizen<span className="text-gradient">ai</span></span>
             </div>
             <p className="mt-3 text-sm text-muted-foreground">Kaizenai — Inteligência que transforma.</p>
@@ -287,6 +290,7 @@ function Index() {
           <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground md:justify-center">
             <li><a href="#solucoes" className="hover:text-foreground">Soluções</a></li>
             <li><a href="#como-funciona" className="hover:text-foreground">Como Funciona</a></li>
+            <li><a href="#clientes" className="hover:text-foreground">Clientes</a></li>
             <li><a href="#tecnologias" className="hover:text-foreground">Tecnologias</a></li>
             <li><a href="#contato" className="hover:text-foreground">Contato</a></li>
           </ul>

@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
-import { Brain, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { WHATSAPP } from "./WhatsAppBubble";
+import { Logo } from "./Logo";
 
 const links = [
   { href: "#home", label: "Home" },
   { href: "#solucoes", label: "Soluções" },
   { href: "#como-funciona", label: "Como Funciona" },
+  { href: "#clientes", label: "Clientes" },
   { href: "#tecnologias", label: "Tecnologias" },
   { href: "#sobre", label: "Sobre" },
   { href: "#contato", label: "Contato" },
@@ -29,10 +31,8 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <a href="#home" className="flex items-center gap-2">
-          <span className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[var(--neon-blue)] to-[var(--neon-violet)] shadow-[var(--shadow-glow)]">
-            <Brain className="h-5 w-5 text-background" />
-          </span>
+        <a href="#home" className="flex items-center gap-2.5">
+          <Logo className="h-9 w-9" />
           <span className="font-display text-xl font-bold tracking-tight">
             Kaizen<span className="text-gradient">ai</span>
           </span>
