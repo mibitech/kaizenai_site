@@ -57,6 +57,7 @@ function Index() {
   useReveal();
 
   const [activeStep, setActiveStep] = useState(0);
+  const [activeSlide, setActiveSlide] = useState(0);
   useEffect(() => {
     const id = setInterval(() => setActiveStep((s) => (s + 1) % steps.length), 1600);
     return () => clearInterval(id);
