@@ -73,7 +73,7 @@ function Index() {
       <section id="home" className="relative isolate overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32">
         {/* Carousel background */}
         <div className="absolute inset-0 -z-20">
-          <AICarousel asBackground onSlideChange={setActiveSlide} />
+          <AICarousel asBackground onSlideChange={setActiveSlide} onApi={setCarouselApi} />
         </div>
         {/* Dark overlay for legibility */}
         <div className="absolute inset-0 -z-10 bg-background/75 backdrop-blur-[2px]" aria-hidden />
@@ -82,6 +82,25 @@ function Index() {
           <NeuralNetwork />
         </div>
         <div className="absolute inset-x-0 top-0 -z-10 h-[600px]" style={{ background: "var(--gradient-glow)" }} aria-hidden />
+
+        {/* Carousel arrows */}
+        <button
+          type="button"
+          aria-label="Slide anterior"
+          onClick={() => carouselApi?.scrollPrev()}
+          className="group absolute left-3 top-1/2 z-20 -translate-y-1/2 rounded-full glass p-3 transition hover:bg-background/80 hover:shadow-[var(--shadow-glow)] md:left-6"
+        >
+          <ChevronLeft className="h-5 w-5 text-foreground transition-colors group-hover:text-[var(--neon-blue)]" />
+        </button>
+        <button
+          type="button"
+          aria-label="Próximo slide"
+          onClick={() => carouselApi?.scrollNext()}
+          className="group absolute right-3 top-1/2 z-20 -translate-y-1/2 rounded-full glass p-3 transition hover:bg-background/80 hover:shadow-[var(--shadow-glow)] md:right-6"
+        >
+          <ChevronRight className="h-5 w-5 text-foreground transition-colors group-hover:text-[var(--neon-blue)]" />
+        </button>
+
 
 
         <div className="mx-auto max-w-6xl px-6 text-center">
