@@ -37,37 +37,38 @@
 
 :root {
   --radius: 0.75rem;
-  /* Dark theme always */
-  --background: oklch(0.13 0.02 270);
-  --foreground: oklch(0.97 0.01 250);
-  --card: oklch(0.17 0.025 270);
-  --card-foreground: oklch(0.97 0.01 250);
-  --popover: oklch(0.17 0.025 270);
-  --popover-foreground: oklch(0.97 0.01 250);
-  --primary: oklch(0.7 0.2 245); /* electric blue */
-  --primary-foreground: oklch(0.1 0.02 270);
-  --secondary: oklch(0.6 0.22 295); /* violet */
-  --secondary-foreground: oklch(0.97 0.01 250);
-  --muted: oklch(0.22 0.03 270);
-  --muted-foreground: oklch(0.7 0.03 260);
-  --accent: oklch(0.85 0.2 165); /* neon green */
-  --accent-foreground: oklch(0.1 0.02 270);
+  /* Dark theme — warm palette (yellow → orange → red) */
+  --background: oklch(0.14 0.02 35);
+  --foreground: oklch(0.97 0.01 80);
+  --card: oklch(0.18 0.025 35);
+  --card-foreground: oklch(0.97 0.01 80);
+  --popover: oklch(0.18 0.025 35);
+  --popover-foreground: oklch(0.97 0.01 80);
+  --primary: oklch(0.78 0.18 65); /* vibrant orange */
+  --primary-foreground: oklch(0.15 0.02 35);
+  --secondary: oklch(0.65 0.23 30); /* deep red */
+  --secondary-foreground: oklch(0.97 0.01 80);
+  --muted: oklch(0.23 0.03 35);
+  --muted-foreground: oklch(0.72 0.04 60);
+  --accent: oklch(0.88 0.17 95); /* bright yellow */
+  --accent-foreground: oklch(0.15 0.02 35);
   --destructive: oklch(0.6 0.24 27);
-  --destructive-foreground: oklch(0.97 0.01 250);
-  --border: oklch(0.3 0.04 270 / 0.5);
-  --input: oklch(0.3 0.04 270 / 0.5);
-  --ring: oklch(0.7 0.2 245);
+  --destructive-foreground: oklch(0.97 0.01 80);
+  --border: oklch(0.35 0.05 45 / 0.5);
+  --input: oklch(0.35 0.05 45 / 0.5);
+  --ring: oklch(0.78 0.18 65);
 
-  --neon-blue: oklch(0.72 0.2 240);
-  --neon-violet: oklch(0.65 0.22 295);
-  --neon-green: oklch(0.85 0.2 165);
+  /* kept the same variable names so existing components stay in sync */
+  --neon-blue: oklch(0.85 0.18 90);   /* yellow */
+  --neon-violet: oklch(0.72 0.2 55);  /* orange */
+  --neon-green: oklch(0.65 0.23 28);  /* red */
 
-  --gradient-primary: linear-gradient(135deg, oklch(0.7 0.2 245), oklch(0.65 0.22 295));
-  --gradient-glow: radial-gradient(circle at 50% 50%, oklch(0.7 0.2 245 / 0.4), transparent 70%);
-  --gradient-text: linear-gradient(135deg, oklch(0.85 0.18 245), oklch(0.78 0.2 295), oklch(0.85 0.2 165));
-  --shadow-glow: 0 0 40px oklch(0.7 0.2 245 / 0.4);
-  --shadow-glow-violet: 0 0 40px oklch(0.65 0.22 295 / 0.4);
-  --shadow-glow-green: 0 0 30px oklch(0.85 0.2 165 / 0.35);
+  --gradient-primary: linear-gradient(135deg, oklch(0.85 0.18 90), oklch(0.72 0.2 55), oklch(0.65 0.23 28));
+  --gradient-glow: radial-gradient(circle at 50% 50%, oklch(0.72 0.2 55 / 0.45), transparent 70%);
+  --gradient-text: linear-gradient(135deg, oklch(0.88 0.17 95), oklch(0.78 0.2 60), oklch(0.65 0.23 28));
+  --shadow-glow: 0 0 40px oklch(0.72 0.2 55 / 0.45);
+  --shadow-glow-violet: 0 0 40px oklch(0.65 0.23 28 / 0.4);
+  --shadow-glow-green: 0 0 30px oklch(0.88 0.17 95 / 0.4);
 }
 
 @layer base {
