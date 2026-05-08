@@ -7,10 +7,9 @@ import {
 } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { NeuralNetwork } from "@/components/NeuralNetwork";
-import { Typewriter } from "@/components/Typewriter";
 import { WhatsAppBubble, WHATSAPP } from "@/components/WhatsAppBubble";
 import { Clients } from "@/components/Clients";
-import { AICarousel } from "@/components/AICarousel";
+import { AICarousel, heroSlides } from "@/components/AICarousel";
 import { Logo } from "@/components/Logo";
 import { useReveal } from "@/hooks/use-reveal";
 
