@@ -128,7 +128,7 @@ function Index() {
               href={WHATSAPP}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-violet)] px-7 py-3.5 font-semibold text-background shadow-[var(--shadow-glow)] transition-transform hover:scale-105"
+              className="group inline-flex items-center gap-2 rounded-full bg-[var(--neon-blue)] px-7 py-3.5 font-semibold text-background shadow-[var(--shadow-glow)] transition-transform hover:scale-105"
             >
               Quero meu produto com IA
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -350,7 +350,7 @@ function Index() {
               href={WHATSAPP}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-violet)] px-8 py-4 font-semibold text-background shadow-[var(--shadow-glow)] transition-transform hover:scale-105"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-[var(--neon-blue)] px-8 py-4 font-semibold text-background shadow-[var(--shadow-glow)] transition-transform hover:scale-105"
             >
               Falar no WhatsApp Agora
               <ArrowRight className="h-5 w-5" />

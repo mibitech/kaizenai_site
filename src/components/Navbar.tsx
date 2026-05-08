@@ -55,7 +55,7 @@ export function Navbar() {
           href={WHATSAPP}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden md:inline-flex items-center rounded-full bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-violet)] px-5 py-2.5 text-sm font-semibold text-background shadow-[var(--shadow-glow)] transition-transform hover:scale-105"
+          className="hidden md:inline-flex items-center rounded-full bg-[var(--neon-blue)] px-5 py-2.5 text-sm font-semibold text-background shadow-[var(--shadow-glow)] transition-transform hover:scale-105"
         >
           Fale com um Especialista
         </a>
@@ -88,7 +88,7 @@ export function Navbar() {
                 href={WHATSAPP}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 block rounded-full bg-gradient-to-r from-[var(--neon-blue)] to-[var(--neon-violet)] px-5 py-2.5 text-center text-sm font-semibold text-background"
+                className="mt-2 block rounded-full bg-[var(--neon-blue)] px-5 py-2.5 text-center text-sm font-semibold text-background"
               >
                 Fale com um Especialista
               </a>
