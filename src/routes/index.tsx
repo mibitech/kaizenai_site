@@ -119,7 +119,6 @@ function Index() {
             </a>
           </div>
 
-          <AICarousel />
 
           {/* floating icons */}
           <div className="pointer-events-none absolute left-[8%] top-[40%] hidden md:block">
