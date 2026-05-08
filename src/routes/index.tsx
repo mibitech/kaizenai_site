@@ -71,7 +71,7 @@ function Index() {
       <section id="home" className="relative isolate overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32">
         {/* Carousel background */}
         <div className="absolute inset-0 -z-20">
-          <AICarousel asBackground />
+          <AICarousel asBackground onSlideChange={setActiveSlide} />
         </div>
         {/* Dark overlay for legibility */}
         <div className="absolute inset-0 -z-10 bg-background/75 backdrop-blur-[2px]" aria-hidden />
@@ -88,9 +88,12 @@ function Index() {
             <span className="text-muted-foreground">IA · Dados · Engenharia · Resultado real</span>
           </div>
 
-          <h1 className="font-display text-4xl font-bold leading-[1.1] sm:text-5xl md:text-7xl">
-            <Typewriter />
+          <h1 className="font-display text-4xl font-bold leading-[1.1] sm:text-5xl md:text-7xl min-h-[3.5em] flex items-center justify-center">
+            <span key={activeSlide} className="text-gradient animate-fade-in">
+              {heroSlides[activeSlide]?.phrase}
+            </span>
           </h1>
+
 
           <p className="animate-fade-up mx-auto mt-8 max-w-2xl text-base text-muted-foreground md:text-lg">
             Você tem a ideia. Nós construímos o produto. Com{" "}
