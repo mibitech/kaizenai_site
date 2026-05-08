@@ -6,6 +6,10 @@ const phrases = [
   "Do dado bruto ao produto SaaS com IA",
 ];
 
+// Longest phrase used as an invisible placeholder so the heading
+// reserves the maximum height/width and never reflows the layout.
+const longest = phrases.reduce((a, b) => (a.length >= b.length ? a : b));
+
 export function Typewriter() {
   const [i, setI] = useState(0);
   const [text, setText] = useState("");
@@ -29,9 +33,16 @@ export function Typewriter() {
   }, [text, deleting, i]);
 
   return (
-    <span className="text-gradient">
-      {text}
-      <span className="ml-1 inline-block h-[0.9em] w-[3px] -mb-1 bg-[var(--neon-blue)] animate-blink" />
+    <span className="relative inline-block w-full">
+      {/* invisible placeholder reserves space so layout never shifts */}
+      <span aria-hidden className="invisible block">{longest}</span>
+      {/* actual animated text overlays the placeholder */}
+      <span className="text-gradient absolute inset-0 flex items-center justify-center text-center">
+        <span>
+          {text}
+          <span className="ml-1 inline-block h-[0.9em] w-[3px] -mb-1 align-middle bg-[var(--neon-blue)] animate-blink" />
+        </span>
+      </span>
     </span>
   );
 }

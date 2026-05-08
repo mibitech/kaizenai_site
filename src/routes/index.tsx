@@ -10,6 +10,7 @@ import { NeuralNetwork } from "@/components/NeuralNetwork";
 import { Typewriter } from "@/components/Typewriter";
 import { WhatsAppBubble, WHATSAPP } from "@/components/WhatsAppBubble";
 import { Clients } from "@/components/Clients";
+import { AICarousel } from "@/components/AICarousel";
 import { Logo } from "@/components/Logo";
 import { useReveal } from "@/hooks/use-reveal";
 
@@ -110,6 +111,8 @@ function Index() {
               <ChevronRight className="h-4 w-4" />
             </a>
           </div>
+
+          <AICarousel />
 
           {/* floating icons */}
           <div className="pointer-events-none absolute left-[8%] top-[40%] hidden md:block">
