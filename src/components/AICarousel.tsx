@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import aiNeural from "@/assets/ai-neural.jpg";
@@ -16,11 +16,6 @@ const slides = [
 export function AICarousel() {
   const autoplay = useRef(Autoplay({ delay: 3500, stopOnInteraction: false, stopOnMouseEnter: true }));
   const [emblaRef] = useEmblaCarousel({ loop: true, align: "center" }, [autoplay.current]);
-
-  // ensure autoplay restarts on mount
-  useEffect(() => {
-    autoplay.current?.play?.();
-  }, []);
 
   return (
     <div className="relative mx-auto mt-14 w-full max-w-5xl">
