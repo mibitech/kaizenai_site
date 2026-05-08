@@ -5,11 +5,11 @@ WORKDIR /app
 # Instalar pnpm globalmente
 RUN npm install -g pnpm
 
-# Copiar arquivos de dependências (inclui .npmrc para shamefully-hoist)
-COPY package.json pnpm-lock.yaml .npmrc ./
+# Copiar arquivos de dependências
+COPY package.json pnpm-lock.yaml ./
 
 # Instalar dependências com pnpm (frozen-lockfile garante versões exatas)
-RUN pnpm install --frozen-lockfile
+RUN pnpm install --frozen-lockfile --shamefully-hoist
 
 # Copiar código fonte
 COPY . .
