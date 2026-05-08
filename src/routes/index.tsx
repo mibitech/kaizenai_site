@@ -70,7 +70,7 @@ function Index() {
       <WhatsAppBubble />
 
       {/* HERO */}
-      <section id="home" className="relative isolate overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32">
+      <section id="home" className="relative isolate overflow-hidden pt-24 pb-12 md:pt-28 md:pb-16 lg:pt-32 lg:pb-20">
         {/* Carousel background */}
         <div className="absolute inset-0 -z-20">
           <AICarousel asBackground onSlideChange={setActiveSlide} onApi={setCarouselApi} />
@@ -109,21 +109,20 @@ function Index() {
             <span className="text-muted-foreground">IA · Dados · Engenharia · Resultado real</span>
           </div>
 
-          <h1 className="font-display text-4xl font-bold leading-[1.1] sm:text-5xl md:text-7xl min-h-[3.5em] flex items-center justify-center">
+          <h1 className="font-display text-3xl font-bold leading-[1.1] sm:text-4xl md:text-5xl lg:text-6xl min-h-[2.6em] flex items-center justify-center">
             <span key={activeSlide} className="text-gradient animate-fade-in">
               {heroSlides[activeSlide]?.phrase}
             </span>
           </h1>
 
-
-          <p className="animate-fade-up mx-auto mt-8 max-w-2xl text-base text-muted-foreground md:text-lg">
+          <p className="animate-fade-up mx-auto mt-5 max-w-2xl text-sm text-muted-foreground md:mt-6 md:text-base">
             Você tem a ideia. Nós construímos o produto. Com{" "}
             <span className="text-foreground">Data Engineering</span>,{" "}
             <span className="text-foreground">Data Science</span> e{" "}
             <span className="text-foreground">Agentes de IA</span>, entregamos soluções que realmente funcionam.
           </p>
 
-          <div className="animate-fade-up mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row" style={{ animationDelay: "0.15s" }}>
+          <div className="animate-fade-up mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row md:mt-8" style={{ animationDelay: "0.15s" }}>
             <a
               href={WHATSAPP}
               target="_blank"
