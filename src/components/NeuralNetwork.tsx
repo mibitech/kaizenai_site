@@ -27,7 +27,7 @@ export function NeuralNetwork() {
         vx: (Math.random() - 0.5) * 0.35,
         vy: (Math.random() - 0.5) * 0.35,
         r: 1.5 + Math.random() * 2.5,
-        hue: Math.random() < 0.5 ? 55 : Math.random() < 0.7 ? 28 : 95,
+        hue: Math.random() < 0.5 ? 195 : Math.random() < 0.7 ? 125 : 175,
       }));
     };
     resize();
