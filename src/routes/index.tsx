@@ -58,7 +58,7 @@ function Index() {
 
   const [activeStep, setActiveStep] = useState(0);
   const [activeSlide, setActiveSlide] = useState(0);
-  const [carouselApi, setCarouselApi] = useState<ReturnType<typeof useEmblaApiSetter>>();
+  const [carouselApi, setCarouselApi] = useState<{ scrollPrev: () => void; scrollNext: () => void } | undefined>();
   useEffect(() => {
     const id = setInterval(() => setActiveStep((s) => (s + 1) % steps.length), 1600);
     return () => clearInterval(id);
