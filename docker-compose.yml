@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  frontend:
+    build: .
+    image: kaizenai_site:latest
+    container_name: kaizenai_site
+    environment:
+      - NODE_ENV=production
+      - DEBUG=false
+    expose:
+      - 80
+    restart: unless-stopped
+    deploy:
+      replicas: 1
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.kaizenai_site.rule=Host(`www.kaizenai.com.br`)"
+        - "traefik.http.routers.kaizenai_site.entrypoints=websecure"
+        - "traefik.http.routers.kaizenai_site.tls.certresolver=letsencryptresolver"
+        - "traefik.http.services.kaizenai_site.loadbalancer.server.port=80"
+        - "traefik.http.routers.kaizenai_site.priority=1"
+        - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
+        - "traefik.http.services.kaizenai_site.loadbalancer.passHostHeader=true"
+        - "traefik.http.routers.kaizenai_site.middlewares=sslheader"
+    networks:
+      - rede_mibi
+
+networks:
+  rede_mibi:
+    external: true

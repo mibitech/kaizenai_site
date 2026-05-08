@@ -88,7 +88,7 @@ function Index() {
           type="button"
           aria-label="Slide anterior"
           onClick={() => carouselApi?.scrollPrev()}
-          className="group absolute left-3 top-1/2 z-20 -translate-y-1/2 rounded-full glass p-3 transition hover:bg-background/80 hover:shadow-[var(--shadow-glow)] md:left-6"
+          className="group absolute left-3 top-1/2 z-40 -translate-y-1/2 rounded-full glass p-3 transition hover:bg-background/80 hover:shadow-[var(--shadow-glow)] md:left-6"
         >
           <ChevronLeft className="h-5 w-5 text-foreground transition-colors group-hover:text-[var(--neon-blue)]" />
         </button>
@@ -96,14 +96,25 @@ function Index() {
           type="button"
           aria-label="Próximo slide"
           onClick={() => carouselApi?.scrollNext()}
-          className="group absolute right-3 top-1/2 z-20 -translate-y-1/2 rounded-full glass p-3 transition hover:bg-background/80 hover:shadow-[var(--shadow-glow)] md:right-6"
+          className="group absolute right-3 top-1/2 z-40 -translate-y-1/2 rounded-full glass p-3 transition hover:bg-background/80 hover:shadow-[var(--shadow-glow)] md:right-6"
         >
           <ChevronRight className="h-5 w-5 text-foreground transition-colors group-hover:text-[var(--neon-blue)]" />
         </button>
 
 
 
-        <div className="mx-auto max-w-6xl px-6 text-center">
+        {/* floating icons */}
+        <div className="pointer-events-none absolute left-[8%] top-[40%] z-10 hidden md:block">
+          <div className="animate-float glass rounded-2xl p-3 shadow-[var(--shadow-glow)]"><Bot className="h-6 w-6 text-[var(--neon-blue)]" /></div>
+        </div>
+        <div className="pointer-events-none absolute right-[10%] top-[35%] z-10 hidden md:block">
+          <div className="animate-float glass rounded-2xl p-3 shadow-[var(--shadow-glow-violet)]" style={{ animationDelay: "1.2s" }}><BrainCircuit className="h-6 w-6 text-[var(--neon-violet)]" /></div>
+        </div>
+        <div className="pointer-events-none absolute right-[18%] top-[65%] z-10 hidden md:block">
+          <div className="animate-float glass rounded-2xl p-3 shadow-[var(--shadow-glow-green)]" style={{ animationDelay: "0.6s" }}><Database className="h-6 w-6 text-[var(--neon-green)]" /></div>
+        </div>
+
+        <div className="relative z-30 mx-auto max-w-6xl px-6 text-center">
           <div className="animate-fade-in mx-auto mb-6 inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs">
             <span className="h-2 w-2 rounded-full bg-[var(--neon-green)] shadow-[0_0_10px_var(--neon-green)]" />
             <span className="text-muted-foreground">IA · Dados · Engenharia · Resultado real</span>
@@ -139,18 +150,6 @@ function Index() {
               Conheça nossas soluções
               <ChevronRight className="h-4 w-4" />
             </a>
-          </div>
-
-
-          {/* floating icons */}
-          <div className="pointer-events-none absolute left-[8%] top-[40%] hidden md:block">
-            <div className="animate-float glass rounded-2xl p-3 shadow-[var(--shadow-glow)]"><Bot className="h-6 w-6 text-[var(--neon-blue)]" /></div>
-          </div>
-          <div className="pointer-events-none absolute right-[10%] top-[35%] hidden md:block">
-            <div className="animate-float glass rounded-2xl p-3 shadow-[var(--shadow-glow-violet)]" style={{ animationDelay: "1.2s" }}><BrainCircuit className="h-6 w-6 text-[var(--neon-violet)]" /></div>
-          </div>
-          <div className="pointer-events-none absolute right-[18%] top-[65%] hidden md:block">
-            <div className="animate-float glass rounded-2xl p-3 shadow-[var(--shadow-glow-green)]" style={{ animationDelay: "0.6s" }}><Database className="h-6 w-6 text-[var(--neon-green)]" /></div>
           </div>
         </div>
       </section>
