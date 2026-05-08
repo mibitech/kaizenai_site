@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   ArrowRight, Bot, Database, BrainCircuit, Workflow, Plug,
@@ -54,6 +55,12 @@ const techs = [
 
 function Index() {
   useReveal();
+
+  const [activeStep, setActiveStep] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setActiveStep((s) => (s + 1) % steps.length), 1600);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <div className="min-h-screen text-foreground">
@@ -168,18 +175,61 @@ function Index() {
           </div>
 
           <div className="relative">
-            <div className="absolute left-0 right-0 top-7 hidden h-px bg-gradient-to-r from-transparent via-[var(--neon-blue)]/50 to-transparent md:block" />
+            <div className="absolute left-0 right-0 top-7 hidden h-px bg-border md:block" />
+            <div
+              className="absolute left-0 top-7 hidden h-px bg-gradient-to-r from-[var(--neon-blue)] via-[var(--neon-violet)] to-[var(--neon-green)] shadow-[0_0_12px_var(--neon-violet)] transition-all duration-700 ease-out md:block"
+              style={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
+            />
             <ol className="grid gap-10 md:grid-cols-5">
-              {steps.map((s, i) => (
-                <li key={s.title} className="reveal relative text-center" style={{ transitionDelay: `${i * 100}ms` }}>
-                  <div className="relative z-10 mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-background ring-2 ring-[var(--neon-blue)] shadow-[var(--shadow-glow)]">
-                    <s.icon className="h-6 w-6 text-[var(--neon-blue)]" />
-                  </div>
-                  <div className="mt-1 text-xs font-semibold text-[var(--neon-violet)]">PASSO {i + 1}</div>
-                  <h3 className="mt-2 font-semibold">{s.title}</h3>
-                  <p className="mt-1 text-xs text-muted-foreground">{s.desc}</p>
-                </li>
-              ))}
+              {steps.map((s, i) => {
+                const isActive = i === activeStep;
+                const isDone = i < activeStep;
+                return (
+                  <li
+                    key={s.title}
+                    className="reveal relative text-center"
+                    style={{ transitionDelay: `${i * 100}ms` }}
+                  >
+                    <div
+                      className={`relative z-10 mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-background ring-2 transition-all duration-500 ${
+                        isActive
+                          ? "scale-110 ring-[var(--neon-violet)] shadow-[0_0_30px_var(--neon-violet)]"
+                          : isDone
+                            ? "ring-[var(--neon-blue)] shadow-[var(--shadow-glow)]"
+                            : "ring-border"
+                      }`}
+                    >
+                      {isActive && (
+                        <span className="pointer-events-none absolute inset-0 rounded-full ring-2 ring-[var(--neon-violet)] [animation:pulse-ring_1.6s_ease-out_infinite]" />
+                      )}
+                      <s.icon
+                        className={`h-6 w-6 transition-colors duration-500 ${
+                          isActive
+                            ? "text-[var(--neon-violet)]"
+                            : isDone
+                              ? "text-[var(--neon-blue)]"
+                              : "text-muted-foreground"
+                        }`}
+                      />
+                    </div>
+                    <div
+                      className={`mt-2 text-xs font-semibold transition-colors duration-500 ${
+                        isActive ? "text-[var(--neon-violet)]" : "text-muted-foreground"
+                      }`}
+                    >
+                      PASSO {i + 1}
+                    </div>
+                    <h3
+                      className={`mt-2 font-semibold transition-colors duration-500 ${
+                        isActive ? "text-foreground" : "text-foreground/80"
+                      }`}
+                    >
+                      {s.title}
+                    </h3>
+                    <p className="mt-1 text-xs text-muted-foreground">{s.desc}</p>
+                  </li>
+                );
+              })}
             </ol>
           </div>
         </div>
