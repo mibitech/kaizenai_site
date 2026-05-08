@@ -13,14 +13,21 @@ export const heroSlides = [
   { src: aiChip, phrase: "Tecnologia de ponta ao seu alcance" },
 ];
 
+type EmblaApi = NonNullable<ReturnType<typeof useEmblaCarousel>[1]>;
+
 type Props = {
   asBackground?: boolean;
   onSlideChange?: (index: number) => void;
+  onApi?: (api: EmblaApi | undefined) => void;
 };
 
-export function AICarousel({ asBackground = false, onSlideChange }: Props) {
-  const autoplay = useRef(Autoplay({ delay: 4500, stopOnInteraction: false, stopOnMouseEnter: false }));
+export function AICarousel({ asBackground = false, onSlideChange, onApi }: Props) {
+  const autoplay = useRef(Autoplay({ delay: 8000, stopOnInteraction: false, stopOnMouseEnter: false }));
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" }, [autoplay.current]);
+
+  useEffect(() => {
+    onApi?.(emblaApi);
+  }, [emblaApi, onApi]);
 
   useEffect(() => {
     if (!emblaApi || !onSlideChange) return;
@@ -31,6 +38,7 @@ export function AICarousel({ asBackground = false, onSlideChange }: Props) {
       emblaApi.off("select", handler);
     };
   }, [emblaApi, onSlideChange]);
+
 
   if (asBackground) {
     return (
