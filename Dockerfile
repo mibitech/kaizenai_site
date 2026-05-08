@@ -14,9 +14,6 @@ RUN pnpm install --frozen-lockfile --shamefully-hoist
 # Copiar código fonte
 COPY . .
 
-# Copiar arquivo .env para build
-COPY .env .env
-
 # Build da aplicação
 RUN pnpm build
 
